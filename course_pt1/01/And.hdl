@@ -1,0 +1,41 @@
+/**
+ * @defgroup   AND And
+ *
+ * @brief      This file implements And.
+ *
+ * @author     Vigneshrajarathinam
+ * @date       2022
+ */
+
+ /**
+  * Gate Info:
+  * ----
+  * out = A*B
+  * 
+  * Implementation:
+  * ----
+  * Since the basic gates are NAND and NOR,
+  * constructing others with these will be
+  * relevent.
+  * 
+  * out = Not(Not(A And B))
+  * 
+  * since, AND = NOT(NAND(A,B))
+  * 
+  */
+ 
+
+ CHIP And {
+     IN a, b;
+     OUT out;
+ 
+     PARTS:
+     
+     /**
+      * Initial output from the NAND gate 
+      * with temporary output as 'nandOut'
+      */
+     Nand(a=a, b=b, out=nandOut);
+     Not(in=nandOut, out=out);
+
+ }

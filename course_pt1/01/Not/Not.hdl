@@ -1,0 +1,40 @@
+/**
+ * @defgroup   NOT Not
+ *
+ * @brief      This file implements Not.
+ *
+ * @author     Vigneshrajarathinam
+ * @date       2022
+ */
+
+ /**
+  * Gate Info:
+  * ----
+  * out = ¬A
+  * 
+  * Implementation:
+  * ----
+  * Since the basic gates are NAND and NOR,
+  * constructing others with these will be
+  * relevent.
+  * 
+  * out = Not(A)
+  * 
+  * since, NOT = NAND(A,A)
+  * 
+  */
+ 
+
+ CHIP Not {
+     IN in;
+     OUT out;
+ 
+     PARTS:
+     
+     /**
+      * If both the inputs are assumed as one
+      * then it will be considered as NOT gate
+      */
+     Nand(a=in, b=in, out=out);
+
+ }

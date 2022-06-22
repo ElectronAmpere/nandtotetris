@@ -1,0 +1,34 @@
+/**
+ * @defgroup   OR Or
+ *
+ * @brief      This file implements Or.
+ *
+ * @author     Vigneshrajarathinam
+ * @date       2022
+ */
+ /**
+  * Gate Info:
+  * ----
+  * out = A+B
+  * 
+  * Implementation:
+  * ----
+  * Since the basic gates are NAND and NOR,
+  * constructing others with these will be
+  * relevent.
+  * 
+  * out = Not(Not(A Or B))
+  * 
+  * since, AND = NOT(NOR(A,B))
+  * 
+  */
+  CHIP Or {
+      IN a, b;
+      OUT out;
+  
+      PARTS:
+      
+      Nand(a=a, b=a, out=nota);
+      Nand(a=b, b=b, out=notb);
+      Nand(a=nota, b=notb, out=out);
+  }

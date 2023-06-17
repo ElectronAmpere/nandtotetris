@@ -1,7 +1,7 @@
 /**
- * @defgroup   OR Or
+ * @defgroup   XOR Exclusive-or
  *
- * @brief      This file implements Or.
+ * @brief      This file implements Exclusive-or.
  *
  * @author     Vigneshrajarathinam
  * @date       2022
@@ -22,14 +22,10 @@
   * since, AND = NOT(NOR(A,B))
   * 
   */
-  CHIP Or {
+  CHIP Xor {
       IN a, b;
       OUT out;
-  
+
       PARTS:
       
-      Nand(a=a, b=a, out=nota);
-      Nand(a=b, b=b, out=notb);
-
-      Nand(a=nota, b=notb, out=out);
   }
